@@ -8,40 +8,58 @@
     tools:context=".FragmentRegistrar">
 
     <EditText
-        android:id="@+id/regEmail"
+        android:id="@+id/registrar_fragment_edit_email"
         android:layout_width="301dp"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="@string/registrar_fragment_edit_email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/registrar_fragment_edit_nome"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/registrar_fragment_edit_nome"
+        app:layout_constraintTop_toBottomOf="@+id/registrar_fragment_edit_nome" />
+
+    <Button
+        android:id="@+id/registrar_fragment_btn_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="@string/registrar_fragment_btn_salvar"
+        app:layout_constraintEnd_toEndOf="@+id/registrar_fragment_edit_senha"
+        app:layout_constraintStart_toStartOf="@+id/registrar_fragment_edit_senha"
+        app:layout_constraintTop_toBottomOf="@+id/registrar_fragment_edit_senha" />
+
+    <EditText
+        android:id="@+id/registrar_fragment_edit_nome"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint="@string/registrar_fragment_edit_nome"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/regSenha"
-        android:layout_width="297dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/regEmail"
-        app:layout_constraintStart_toStartOf="@+id/regEmail"
-        app:layout_constraintTop_toBottomOf="@+id/regEmail" />
-
-    <Button
-        android:id="@+id/btnSalvar"
-        android:layout_width="wrap_content"
+        android:id="@+id/registrar_fragment_edit_senha"
+        android:layout_width="303dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/regSenha"
-        app:layout_constraintStart_toStartOf="@+id/regSenha"
-        app:layout_constraintTop_toBottomOf="@+id/regSenha" />
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="@string/registrar_fragment_edit_senha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/registrar_fragment_edit_email"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/registrar_fragment_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/registrar_fragment_edit_email" />
 </android.support.constraint.ConstraintLayout>
