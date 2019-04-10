@@ -5,8 +5,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,16 +25,19 @@ public class MainActivity extends AppCompatActivity implements FragmentLogin.OnF
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.cont_fragment, new FragmentLogin()).commit();
+
         }
     }
-
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
 
 }
 

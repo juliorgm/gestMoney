@@ -66,6 +66,8 @@ public class FragmentLogin extends Fragment {
     public interface OnFragmentInterectionListener {
     }
 
+
+
 //    @Override
 //    public void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -77,9 +79,6 @@ public class FragmentLogin extends Fragment {
 //        });
 
     }
-
-//    public interface OnFragmentInterectionListener {
-//    }
 
 
 
