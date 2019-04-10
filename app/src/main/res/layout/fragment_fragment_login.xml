@@ -25,30 +25,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/login_fragment_edit_senha"
-        android:layout_width="309dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="@string/login_fragment_edit_senha"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/login_fragment_edit_email"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/login_fragment_edit_email"
-        app:layout_constraintTop_toBottomOf="@+id/login_fragment_edit_email" />
-
     <Button
         android:id="@+id/login_fragment_btn_entrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="36dp"
         android:text="@string/login_fragment_btn_entrar"
         app:layout_constraintEnd_toEndOf="@+id/login_fragment_edit_senha"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/login_fragment_edit_senha"
         app:layout_constraintTop_toBottomOf="@+id/login_fragment_edit_senha" />
 
@@ -72,5 +56,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/login_fragment_txt_registrar"
         app:layout_constraintTop_toBottomOf="@+id/login_fragment_txt_registrar" />
+
+    <EditText
+        android:id="@+id/login_fragment_edit_senha"
+        android:layout_width="308dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/login_fragment_edit_senha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/login_fragment_edit_email"
+        app:layout_constraintStart_toStartOf="@+id/login_fragment_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/login_fragment_edit_email" />
 
 </android.support.constraint.ConstraintLayout>

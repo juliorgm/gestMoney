@@ -14,9 +14,9 @@
     <string name="registrar_fragment_btn_retorno">VOLTAR</string>
     <string name="recuperar_fragment_txtTitulo_email">EMAIL</string>
     <string name="recuperar_fragment_edit_email">Informe seu email</string>
-    <string name="recuperar_fragment_txt_texto">Após inserir o endereço e clicar no botão, você receberá uma mensagem de recuperação de senha na caixa de entreada de seu e-mail</string>
+    <string name="recuperar_fragment_txt_mensagem">Após inserir o endereço e clicar no botão, você receberá uma mensagem de recuperação de senha na caixa de entreada de seu e-mail</string>
     <string name="recuperar_fragment_btn_enviar">ENVIAR</string>
-    <string name="recuperar_fragment_btn_retorno">RETORNAR</string>
+    <string name="recuperar_fragment_btn_retorno">VOLTAR</string>
     <string name="title_activity_main">MainActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->

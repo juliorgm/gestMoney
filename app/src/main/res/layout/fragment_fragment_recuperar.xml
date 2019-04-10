@@ -5,4 +5,66 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentRecuperar"/>
+    tools:context=".FragmentRecuperar">
+
+    <TextView
+        android:id="@+id/recuperar_fragment_txtTitulo_email"
+        android:layout_width="81dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/recuperar_fragment_txtTitulo_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/recuperar_fragment_edit_email"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/recuperar_fragment_edit_email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/recuperar_fragment_txtTitulo_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recuperar_fragment_txtTitulo_email"
+        app:layout_constraintTop_toBottomOf="@+id/recuperar_fragment_txtTitulo_email" />
+
+    <TextView
+        android:id="@+id/recuperar_fragment_txt_mensagem"
+        android:layout_width="297dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/recuperar_fragment_txt_mensagem"
+        app:layout_constraintEnd_toEndOf="@+id/recuperar_fragment_edit_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recuperar_fragment_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/recuperar_fragment_edit_email" />
+
+    <Button
+        android:id="@+id/recuperar_fragment_btn_enviar"
+        android:layout_width="93dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/recuperar_fragment_btn_enviar"
+        app:layout_constraintEnd_toEndOf="@+id/recuperar_fragment_txt_mensagem"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="@+id/recuperar_fragment_txt_mensagem"
+        app:layout_constraintTop_toBottomOf="@+id/recuperar_fragment_txt_mensagem" />
+
+    <Button
+        android:id="@+id/recuperar_fragment_btn_retorno"
+        android:layout_width="93dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/recuperar_fragment_btn_retorno"
+        app:layout_constraintEnd_toEndOf="@+id/recuperar_fragment_txt_mensagem"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="@+id/recuperar_fragment_txt_mensagem"
+        app:layout_constraintTop_toBottomOf="@+id/recuperar_fragment_txt_mensagem" />
+</android.support.constraint.ConstraintLayout>

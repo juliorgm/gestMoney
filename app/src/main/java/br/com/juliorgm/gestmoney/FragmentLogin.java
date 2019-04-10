@@ -24,12 +24,19 @@ public class FragmentLogin extends Fragment {
     private Button login_fragment_btn_entrar;
     private TextView login_fragment_txt_registrar;
     private TextView login_fragment_txt_recuperar;
-
-    View vista;
+    View view;
 
 
     public FragmentLogin() {
 
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        login_fragment_edit_email = view.findViewById(R.id.login_fragment_edit_email);
+//        login_fragment_edit_senha = view.findViewById(R.id.login_fragment_edit_senha);
+//        login_fragment_btn_entrar = view.findViewById(R.id.login_fragment_btn_entrar);
     }
 
 
@@ -37,28 +44,24 @@ public class FragmentLogin extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        vista = inflater.inflate(R.layout.fragment_fragment_login, container, false);
-        login_fragment_txt_recuperar = vista.findViewById(R.id.login_fragment_txt_recuperar);
-        login_fragment_txt_registrar = vista.findViewById(R.id.login_fragment_txt_registrar);
+        view = inflater.inflate(R.layout.fragment_fragment_login, container, false);
+
+        login_fragment_txt_registrar = view.findViewById(R.id.login_fragment_txt_registrar);
         login_fragment_txt_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.cont_fragment, new FragmentRegistrar()).commit();
             }
         });
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.dialog_fire_missiles)
-              .setPositiveButton(R.string.fire, new DialogInterface.OnClickListener() {
-                  public void onClick(DialogInterface dialog, int id){
-                      getActivity().getSupportFragmentManager().beginTransaction().add(R.id.cont_fragment, new FragmentRecuperar()).commit();
-       // login_fragment_txt_recuperar.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-          //  public void onClick(View v) {
-            //    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.cont_fragment, new FragmentRecuperar()).commit();
+        login_fragment_txt_recuperar = view.findViewById(R.id.login_fragment_txt_recuperar);
+        login_fragment_txt_recuperar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.cont_fragment, new FragmentRecuperar()).commit();
             }
         });
 
-        return vista;
+        return view;
     }
 
 
@@ -66,19 +69,8 @@ public class FragmentLogin extends Fragment {
     public interface OnFragmentInterectionListener {
     }
 
+}
 
-
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        login_fragment_txt_registrar.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.cont_fragment, new FragmentLogin()).commit();
-//            }
-//        });
-
-    }
 
 
 
