@@ -34,7 +34,7 @@ public class FragmentLogin extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        login_fragment_edit_email = view.findViewById(R.id.login_fragment_edit_email);
+
 //        login_fragment_edit_senha = view.findViewById(R.id.login_fragment_edit_senha);
 //        login_fragment_btn_entrar = view.findViewById(R.id.login_fragment_btn_entrar);
     }
@@ -44,9 +44,12 @@ public class FragmentLogin extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         view = inflater.inflate(R.layout.fragment_fragment_login, container, false);
 
+
         login_fragment_txt_registrar = view.findViewById(R.id.login_fragment_txt_registrar);
+
         login_fragment_txt_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
