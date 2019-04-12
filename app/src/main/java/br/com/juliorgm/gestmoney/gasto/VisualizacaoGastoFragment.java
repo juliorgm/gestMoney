@@ -1,4 +1,4 @@
-package br.com.juliorgm.gestmoney.fragments;
+package br.com.juliorgm.gestmoney.gasto;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import br.com.juliorgm.gestmoney.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class VisualizarGastoFragment extends Fragment {
+public class VisualizacaoGastoFragment extends Fragment {
 
 
-    public VisualizarGastoFragment() {
+    public VisualizacaoGastoFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class VisualizarGastoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_visualizar_gasto, container, false);
+        return inflater.inflate(R.layout.fragment_visualizacao_gasto, container, false);
     }
 
 }

@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import br.com.juliorgm.gestmoney.R;
-import br.com.juliorgm.gestmoney.fragments.FormularioGastoFragment;
-import br.com.juliorgm.gestmoney.fragments.VisualizarGastoFragment;
+import br.com.juliorgm.gestmoney.gasto.FormularioGastoFragment;
+import br.com.juliorgm.gestmoney.gasto.VisualizacaoGastoFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,8 +30,8 @@ public class TabGastoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab_gasto, container, false);
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabs);
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager_gasto);
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabGasto);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPagerGasto);
         viewPager.setAdapter(new TabGastoFragmentPageAdapter(getChildFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
         return view;
@@ -39,8 +39,8 @@ public class TabGastoFragment extends Fragment {
 
     private class TabGastoFragmentPageAdapter extends FragmentPagerAdapter {
 
-        public TabGastoFragmentPageAdapter(FragmentManager fm) {
-            super(fm);
+        public TabGastoFragmentPageAdapter(FragmentManager childFragmentManager) {
+            super(childFragmentManager);
         }
 
         @Override
@@ -49,7 +49,7 @@ public class TabGastoFragment extends Fragment {
                 case 0:
                     return new FormularioGastoFragment();
                 default:
-                    return new VisualizarGastoFragment();
+                    return new VisualizacaoGastoFragment();
             }
         }
 
