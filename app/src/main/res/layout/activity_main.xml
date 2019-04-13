@@ -5,17 +5,67 @@
     android:id="@+id/coordinatorLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    >
 
-    <FrameLayout
-        android:id="@+id/cont_fragment"
-        android:layout_width="403dp"
-        android:layout_height="718dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/login_activity_edit_email"
+        android:layout_width="262dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="@string/login_activity_edit_email"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/login_activity_edit_senha"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/login_activity_edit_senha"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/login_activity_edit_email"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/login_activity_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/login_activity_edit_email" />
+
+    <Button
+        android:id="@+id/login_activity_btn_entrar"
+        android:layout_width="88dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/login_activity_btn_entrar"
+        app:layout_constraintEnd_toEndOf="@+id/login_activity_edit_senha"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/login_activity_edit_senha"
+        app:layout_constraintTop_toBottomOf="@+id/login_activity_edit_senha" />
+
+    <TextView
+        android:id="@+id/login_activity_txt_registrar"
+        android:layout_width="221dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/login_activity_txt_registrar"
+        app:layout_constraintEnd_toEndOf="@+id/login_activity_btn_entrar"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/login_activity_btn_entrar"
+        app:layout_constraintTop_toBottomOf="@+id/login_activity_btn_entrar" />
+
+    <TextView
+        android:id="@+id/login_activity_txt_recuperar"
+        android:layout_width="226dp"
+        android:layout_height="48dp"
+        android:text="@string/login_activity_txt_recuperar"
+        app:layout_constraintEnd_toEndOf="@+id/login_activity_txt_registrar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/login_activity_txt_registrar"
+        app:layout_constraintTop_toBottomOf="@+id/login_activity_txt_registrar" />
 </android.support.constraint.ConstraintLayout>
