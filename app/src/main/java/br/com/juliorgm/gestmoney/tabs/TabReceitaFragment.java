@@ -36,6 +36,7 @@ public class TabReceitaFragment extends Fragment {
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPagerReceita);
         viewPager.setAdapter(new TabReceitaFragmentPageAdapter(getChildFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+        getActivity().setTitle("Receitas");
         return view;
     }
 

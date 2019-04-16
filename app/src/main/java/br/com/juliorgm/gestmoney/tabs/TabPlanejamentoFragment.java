@@ -36,6 +36,7 @@ public class TabPlanejamentoFragment extends Fragment {
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPagerPlanejamento);
         viewPager.setAdapter(new TabPlanejamentoFragmentPageAdapter(getChildFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+        getActivity().setTitle("Planejamentos");
         return view;
     }
     private class TabPlanejamentoFragmentPageAdapter extends FragmentPagerAdapter {

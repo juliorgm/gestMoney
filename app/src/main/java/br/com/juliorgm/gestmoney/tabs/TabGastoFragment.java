@@ -34,6 +34,7 @@ public class TabGastoFragment extends Fragment {
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPagerGasto);
         viewPager.setAdapter(new TabGastoFragmentPageAdapter(getChildFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+        getActivity().setTitle("Gastos");
         return view;
     }
 
