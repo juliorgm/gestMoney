@@ -2,10 +2,12 @@ package br.com.juliorgm.gestmoney.activityLogin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -44,12 +46,39 @@ public class MainActivity extends AppCompatActivity {
         login_activity_txt_recuperar=findViewById(R.id.login_activity_txt_recuperar);
         login_activity_btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                acessarUsuario();
-                Intent intent = new Intent(MainActivity.this,CasaDoLion.class);
-                startActivity(intent);
+            public void onClick(View view) {
+
+                String email = login_activity_edit_email.getText().toString();
+                final String password = login_activity_edit_senha.getText().toString();
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Insira um email!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getApplicationContext(), "Insira uma senha!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if (!task.isSuccessful())
+                        {
+                            Toast.makeText(MainActivity.this, "Falha ao logar,email ou senha invalidos!\nTente novamente.", Toast.LENGTH_LONG).show();
+                        }
+
+                        else {
+                            startActivity(new Intent(MainActivity.this, CasaDoLion.class));
+                            finish();
+
+                        }
+                    }
+                });
             }
         });
+
         login_activity_txt_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -96,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
     private void alerta(String msg) {
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
