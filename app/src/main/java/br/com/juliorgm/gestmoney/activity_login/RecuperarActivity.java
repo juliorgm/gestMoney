@@ -1,13 +1,15 @@
-package br.com.juliorgm.gestmoney.activityLogin;
+package br.com.juliorgm.gestmoney.activity_login;
 
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
+
 import br.com.juliorgm.gestmoney.R;
-public class ActivityRecuperar extends AppCompatActivity {
+
+public class RecuperarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +25,11 @@ public class ActivityRecuperar extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 finishAffinity();
                 break;
-            default:break;
+            default:
+                break;
         }
         return true;
     }
