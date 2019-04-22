@@ -9,6 +9,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import br.com.juliorgm.gestmoney.R;
 import br.com.juliorgm.gestmoney.model.Planejamento;
 
@@ -19,7 +25,10 @@ public class FormularioPlanejamentoFragment extends Fragment {
     private EditText editDataInicio;
     private EditText editDataFim;
     private Button buttonSalvar;
-    private Planejamento planejamento;
+    public static final String USUARIO = "usuario";
+    public static final String PLANEJAMENTOS = "planejamentos";
+    private static final String TAG = "novaPostagem";
+    private static final String REQUIRED = "Required";
 
     public FormularioPlanejamentoFragment() {
 
@@ -29,17 +38,14 @@ public class FormularioPlanejamentoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_formulario_planejamento, container, false);
+        View view = inflater.inflate(R.layout.fragment_formulario_planejamento, container, false);
 
-        carregaViews();
-        cliqueBotoes();;
+        carregaViews(view);
+        cliqueBotao();
 
-        Intent intent = getIntent();
-        planejamento = (Planejamento) intent.getSerializableExtra("PLANEJAMENTO");
-        if (planejamento != null){
-            preencheFormulario(planejamento);
-        }
+        return view;
     }
+
 
     private void preencheFormulario(Planejamento planejamento) {
         editNome.setText(planejamento.getmNome());
@@ -48,28 +54,28 @@ public class FormularioPlanejamentoFragment extends Fragment {
         editDataFim.setText(planejamento.getmDataFim());
     }
 
-    private void cliqueBotoes() {
+    private void cliqueBotao() {
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference reference = database.getReference("planejamentos");
-                if (livro != null) {
-                    reference.child(planejamento.getmId()).setValue(planejamento);
-                }else{
-                    reference.push().setValue(pegaPlanejamento());
-                }
-                finish();
+
+                pegaPlanejamento();
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(USUARIO);
+
+                myRef.child("CLZzksTIksNOsWAmDLkeFOlirVu2").child(PLANEJAMENTOS).push().setValue( pegaPlanejamento());
+
             }
         });
     }
 
-    private void carregaViews() {
-        editNome = findViewById(R.id.edit_nome);
-        editReserva = findViewById(R.id.edit_reserva);
-        editDataInicio = findViewById(R.id.edit_dtInicio);
-        editDataFim = findViewById(R.id.edit_dtFim);
-        buttonSalvar = findViewById(R.id.button_salvar);
+    private void carregaViews(View view) {
+        editNome = view.findViewById(R.id.edit_nome);
+        editReserva = view.findViewById(R.id.edit_reserva);
+        editDataInicio = view.findViewById(R.id.edit_dtInicio);
+        editDataFim = view.findViewById(R.id.edit_dtFim);
+        buttonSalvar = view.findViewById(R.id.button_salvar);
     }
 
     private Planejamento pegaPlanejamento() {

@@ -91,9 +91,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, FormularioPlanejamentoFragment.class);
-                    intent.putExtra("PLANEJAMENTO",planejamento);
-                    mContext.startActivity(intent);
+//                    mContext, FormularioPlanejamentoFragment.class;
                 }
             });
         }
