@@ -5,6 +5,8 @@ public class Planejamento {
     private String mNome;
     private String mValor;
 
+    public Planejamento() {
+    }
 
     public Planejamento(String mNome, String mValor) {
         this.mNome = mNome;
