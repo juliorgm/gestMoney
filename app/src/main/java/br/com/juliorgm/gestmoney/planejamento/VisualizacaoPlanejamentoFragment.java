@@ -60,7 +60,7 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
                     planejamento.setmId(d.getKey());
                     mListaDePlanejamentos.add(planejamento);
                 }
-                carregaRecycler(view);
+                carregaRecycler(recyclerViewPlanejamentos);
             }
 
             @Override
@@ -72,7 +72,6 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
     }
 
     private void carregaRecycler(View view) {
-
         PlanejamentoAdapter adapter = new PlanejamentoAdapter(getContext(), mListaDePlanejamentos);
         recyclerViewPlanejamentos.setAdapter(adapter);
     }
