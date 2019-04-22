@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,7 +28,6 @@ public class FormularioGastoFragment extends Fragment {
     private EditText editDescricaoFormularioGasto;
     private EditText editValorFormularioGasto;
     private Button btnSalvarFormularioGasto;
-    private Spinner spinnerCategoriaFormularioGasto;
 
 
     public FormularioGastoFragment() {
@@ -54,7 +53,7 @@ public class FormularioGastoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 validarFormulario();
-                String valor = editValorFormularioGasto.getText().toString().trim();
+                Double valor = Double.valueOf(editValorFormularioGasto.getText().toString());
                 String data = editDataFormularioGasto.getText().toString().trim();
                 String descricao = editDescricaoFormularioGasto.getText().toString().trim();
 
@@ -69,7 +68,6 @@ public class FormularioGastoFragment extends Fragment {
             }
         });
     }
-
 
     private void validarFormulario() {
     }

@@ -21,7 +21,7 @@ public class Gastos implements Serializable {
         this.mdescricao = mdescricao;
     }
 
-    public Gastos(double mvalor, String mdata, String mcategoria, String mdescricao){
+    public Gastos(double mvalor, String mdata, String mcategoria){
         this.mvalor = mvalor;
         this.mdata = mdata;
         this.mcategoria = mcategoria;
