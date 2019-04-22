@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "280598619283",
+    "firebase_url": "https://gestmoneycrudgastos.firebaseio.com",
+    "project_id": "gestmoneycrudgastos",
+    "storage_bucket": "gestmoneycrudgastos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280598619283:android:711b328b01fb1e4b",
+        "android_client_info": {
+          "package_name": "br.com.juliorgm.gestmoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280598619283-8ueoirsuhtg990bj24tpkmkc3dlq9i2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.juliorgm.gestmoney",
+            "certificate_hash": "c9e1c15695e4b2a3e2179a251e867da1308a21ad"
+          }
+        },
+        {
+          "client_id": "280598619283-j4lkq6bo0m3hj5p33rp1fgs139d62cso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNGiNoy9JnXH0f1dq0nANYI8M6Jjl5fXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280598619283-j4lkq6bo0m3hj5p33rp1fgs139d62cso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
