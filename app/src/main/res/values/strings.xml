@@ -11,7 +11,11 @@
     <string name="nav_receita">Receita</string>
     <string name="nav_planejamento">Planejamento</string>
     <string name="nav_sair">Sair</string>
-
+    <string name="receita_fragment_txt_descricao">Descrição</string>
+    <string name="receita_fragment_txt_valor">Valor</string>
+    <string name="receita_fragment_txt_data">Data</string>
+    <string name="receita_fragment_btn_editar" />
+    <string name="receita_fragment_btn_excluir" />
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main2">Main2Activity</string>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:id="@+id/receita_fragment_txt_descricao"
+        android:layout_width="157dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/receita_fragment_txt_descricao" />
+
+    <TextView
+        android:id="@+id/receita_fragment_txt_valor"
+        android:layout_width="63dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/receita_fragment_txt_valor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/receita_fragment_txt_descricao"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/receita_fragment_txt_descricao"
+        app:layout_constraintTop_toBottomOf="@+id/receita_fragment_txt_descricao"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/receita_fragment_txt_data"
+        android:layout_width="80dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/receita_fragment_txt_data"
+        app:layout_constraintEnd_toEndOf="@+id/receita_fragment_txt_descricao"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/receita_fragment_txt_descricao"
+        app:layout_constraintTop_toBottomOf="@+id/receita_fragment_txt_descricao" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/receita_fragment_btn_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/receita_fragment_btn_excluir"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_editar" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/receita_fragment_btn_excluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_deletar" />
+
+</android.support.constraint.ConstraintLayout>
