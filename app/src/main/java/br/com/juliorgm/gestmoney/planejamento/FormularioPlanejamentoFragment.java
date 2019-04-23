@@ -70,6 +70,8 @@ public class FormularioPlanejamentoFragment extends Fragment {
         });
     }
 
+
+
     private void carregaViews(View view) {
         editNome = view.findViewById(R.id.edit_nome);
         editReserva = view.findViewById(R.id.edit_reserva);
@@ -80,7 +82,7 @@ public class FormularioPlanejamentoFragment extends Fragment {
 
     private Planejamento pegaPlanejamento() {
         String nome = editNome.getText().toString();
-        String reserva = editReserva.getText().toString();
+        double reserva = Double.parseDouble(editReserva.getText().toString());
         String dataInicio = editDataInicio.getText().toString();
         String dataFim = editDataFim.getText().toString();
         return new Planejamento(nome, reserva, dataInicio, dataFim);

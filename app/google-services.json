@@ -47,6 +47,14 @@
           }
         },
         {
+          "client_id": "942815210822-0i0jm6qo4r1c2pkb3m19go271gt762l4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.juliorgm.gestmoney",
+            "certificate_hash": "50fbc137806847014591cd743a60adfe6cb7c093"
+          }
+        },
+        {
           "client_id": "942815210822-3ia2o403bvc39mrb42fdftu3cb5hk4p1.apps.googleusercontent.com",
           "client_type": 3
         }

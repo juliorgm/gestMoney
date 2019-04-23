@@ -11,14 +11,21 @@ public class Planejamento implements Serializable {
     }
 
     private String mNome;
-    private String mReserva;
+    private double mReserva;
     private String mDataInicio;
     private String mDataFim;
 
-    public Planejamento(String nome, String reserva, String dataInicio, String dataFim) {
+    public Planejamento() {
     }
 
-    public Planejamento(String mId, String mNome, String mReserva, String mDataInicio, String mDataFim) {
+    public Planejamento(String nome, Double reserva, String dataInicio, String dataFim) {
+        this.mNome = mNome;
+        this.mReserva = mReserva;
+        this.mDataInicio = mDataInicio;
+        this.mDataFim = mDataFim;
+    }
+
+    public Planejamento(String mId, String mNome, Double mReserva, String mDataInicio, String mDataFim) {
         this.mId = mId;
         this.mNome = mNome;
         this.mReserva = mReserva;
@@ -38,11 +45,11 @@ public class Planejamento implements Serializable {
         this.mNome = mNome;
     }
 
-    public String getmReserva() {
-        return mReserva;
+    public int getmReserva() {
+        return (int) mReserva;
     }
 
-    public void setmReserva(String mReserva) {
+    public void setmReserva(Double mReserva) {
         this.mReserva = mReserva;
     }
 

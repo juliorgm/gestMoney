@@ -33,7 +33,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     @NonNull
     @Override
     public PlanejamentoAdapter.PlanejamentosHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.fragment_visualizacao_planejamento,viewGroup,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_planejamento,viewGroup,false);
         return new PlanejamentosHolder(view);
     }
 
@@ -81,7 +81,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
                 @Override
                 public void onClick(View v) {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference reference = database.getReference("planejamentos");
+                    DatabaseReference reference = database.getReference("usuarios");
                     reference.child(key).removeValue();
                     notifyDataSetChanged();
                 }
@@ -91,7 +91,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    mContext, FormularioPlanejamentoFragment.class;
+                    planejamento.getValue(mContext, FormularioPlanejamentoFragment.class);
                 }
             });
         }

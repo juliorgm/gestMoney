@@ -13,6 +13,9 @@
     <string name="nav_sair">Sair</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="planejamento_fragment_txt_nome" />
+    <string name="planejamento_fragment_txt_receita" />
+    <string name="planejamento_fragment_txt_dtInicio" />
+    <string name="planejamento_fragment_txt_dtFim" />
+
 </resources>
