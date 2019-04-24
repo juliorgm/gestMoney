@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_formulario_receita"
+    tools:context="receita.FormularioReceitaFragment"
     android:id="@+id/frameLayout2" >
 
     <EditText
@@ -32,7 +32,6 @@
         android:ems="10"
         android:hint="@string/receita_fragment_edit_valor"
         android:inputType="textPersonName"
-        android:text="@string/app_name"
         app:layout_constraintEnd_toEndOf="@+id/receita_fragment_edit_descricao"
         app:layout_constraintStart_toStartOf="@+id/receita_fragment_edit_descricao"
         app:layout_constraintTop_toBottomOf="@+id/receita_fragment_edit_descricao" />
@@ -49,7 +48,6 @@
         android:ems="10"
         android:hint="@string/receita_fragment_edit_data"
         android:inputType="textPersonName"
-        android:text="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
