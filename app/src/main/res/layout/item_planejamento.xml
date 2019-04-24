@@ -4,45 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="4dp"
+    android:background="@drawable/borda_item">
 
     <TextView
         android:id="@+id/txt_nome"
-        android:layout_width="91dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/planejamento_fragment_txt_nome"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_dt_inicio"
         app:layout_constraintTop_toBottomOf="@+id/txt_dt_inicio" />
 
     <TextView
         android:id="@+id/txt_valreserva"
-        android:layout_width="89dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/planejamento_fragment_txt_receita"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/fab_editar"
-        app:layout_constraintHorizontal_bias="0.207"
-        app:layout_constraintStart_toEndOf="@+id/txt_nome"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dt_fim"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/txt_nome"
+        app:layout_constraintStart_toEndOf="@+id/txt_nome" />
 
     <TextView
         android:id="@+id/txt_dt_inicio"
-        android:layout_width="67dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/planejamento_fragment_txt_dtInicio"
@@ -52,45 +45,38 @@
 
     <TextView
         android:id="@+id/txt_dt_fim"
-        android:layout_width="60dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/planejamento_fragment_txt_dtFim"
-        app:layout_constraintBottom_toTopOf="@+id/txt_reserva"
         app:layout_constraintStart_toEndOf="@+id/txt_dt_inicio"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/txt_dt_inicio" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginLeft="284dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:clickable="true"
         app:fabSize="mini"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fab_deletar"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btn_editar" />
+        app:srcCompat="@drawable/ic_edit" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_deletar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:clickable="true"
         app:fabSize="mini"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toEndOf="@+id/fab_editar"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btn_deletar" />
+        app:srcCompat="@drawable/ic_delete" />
 
 </android.support.constraint.ConstraintLayout>

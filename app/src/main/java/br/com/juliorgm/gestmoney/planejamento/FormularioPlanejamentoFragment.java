@@ -64,10 +64,13 @@ public class FormularioPlanejamentoFragment extends Fragment {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(USUARIO);
                 myRef.child("CLZzksTIksNOsWAmDLkeFOlirVu2").child(PLANEJAMENTOS).push().setValue( pegaPlanejamento());
+                Toast.makeText(getContext(),"Inserção bem sucedida",Toast.LENGTH_SHORT).show();
+                limparTela();
             }
         });
-        Toast.makeText(getContext(),"Inserção bem sucedida",Toast.LENGTH_SHORT).show();
+    }
 
+    private void limparTela() {
     }
 
     private void carregaViews(View view) {

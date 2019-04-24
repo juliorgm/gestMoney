@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,7 +40,7 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_visualizacao_planejamento, container, false);
-
+        recyclerViewPlanejamentos = view.findViewById(R.id.recycler_planejamento);
         mListaDePlanejamentos = new ArrayList<>();
         carregaFirebase();
         return view;
@@ -48,18 +49,25 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
     private void carregaFirebase(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("usuario");
+        //DatabaseReference reference2 = database.getReference(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+                DataSnapshot snapshot = dataSnapshot.child("CLZzksTIksNOsWAmDLkeFOlirVu2")
+                        .child("planejamentos");
+
                 mListaDePlanejamentos.clear();
-                for (DataSnapshot d: dataSnapshot.getChildren()) {
+                for (DataSnapshot d: snapshot.getChildren()) {
+                    if(d.getKey().equals("pessoal")) continue;
+
                     Planejamento planejamento = d.getValue(Planejamento.class);
                     planejamento.setmId(d.getKey());
                     mListaDePlanejamentos.add(planejamento);
                 }
-                carregaRecycler(recyclerViewPlanejamentos);
+
+                if (mListaDePlanejamentos.size()>0)carregaRecycler();
             }
 
             @Override
@@ -70,9 +78,9 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
         });
     }
 
-    private void carregaRecycler(View view) {
-        recyclerViewPlanejamentos = view.findViewById(R.id.recycler_planejamento);
+    private void carregaRecycler() {
         PlanejamentoAdapter adapter = new PlanejamentoAdapter(getContext(), mListaDePlanejamentos);
+        recyclerViewPlanejamentos.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewPlanejamentos.setAdapter(adapter);
     }
 }

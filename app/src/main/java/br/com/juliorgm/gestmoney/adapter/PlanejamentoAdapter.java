@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
+
 import br.com.juliorgm.gestmoney.R;
 import br.com.juliorgm.gestmoney.model.Planejamento;
 import br.com.juliorgm.gestmoney.planejamento.FormularioPlanejamentoFragment;
@@ -39,7 +40,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     @NonNull
     @Override
     public PlanejamentoAdapter.PlanejamentosHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_planejamento,viewGroup,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_planejamento, viewGroup, false);
         return new PlanejamentosHolder(view);
     }
 
@@ -64,6 +65,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
         private TextView textDataFim;
         private FloatingActionButton fabEditar;
         private FloatingActionButton fabDeletar;
+
         public PlanejamentosHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -75,14 +77,14 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             fabDeletar = itemView.findViewById(R.id.fab_deletar);
         }
 
-        public void vincula(Planejamento planejamento){
+        public void vincula(Planejamento planejamento) {
             textNome.setText(planejamento.getmNome());
-            textReserva.setText(planejamento.getmReserva());
+            textReserva.setText(String.valueOf(planejamento.getmReserva()));
             textDataInicio.setText(planejamento.getmDataInicio());
             textDataFim.setText(planejamento.getmDataFim());
         }
 
-        public void delete(final String key){
+        public void delete(final String key) {
             fabDeletar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -93,15 +95,15 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
                 }
             });
         }
-        public void editar(final Planejamento planejamento){
+
+        public void editar(final Planejamento planejamento) {
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.planejamento.VisualizacaoPlanejamentoFragment, planejamento.FormularioPlanejamentoFragment);
-                    fragmentTransaction.commit();
-
+//                    FragmentManager fragmentManager = mContext.getFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.add(R.id.planejamento.VisualizacaoPlanejamentoFragment, planejamento.FormularioPlanejamentoFragment);
+//                    fragmentTransaction.commit();
 
 
                 }
