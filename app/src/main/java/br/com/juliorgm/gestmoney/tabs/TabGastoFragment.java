@@ -15,9 +15,6 @@ import br.com.juliorgm.gestmoney.R;
 import br.com.juliorgm.gestmoney.gasto.FormularioGastoFragment;
 import br.com.juliorgm.gestmoney.gasto.VisualizacaoGastoFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TabGastoFragment extends Fragment {
 
 
