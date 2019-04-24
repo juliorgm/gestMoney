@@ -4,23 +4,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 import br.com.juliorgm.gestmoney.R;
 import br.com.juliorgm.gestmoney.model.Planejamento;
 import br.com.juliorgm.gestmoney.planejamento.FormularioPlanejamentoFragment;
 
+import static android.content.ContentValues.TAG;
+
 public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.PlanejamentosHolder> {
-
-
 
     private Context mContext;
     private List<Planejamento> mListaDePlanejamentos;
@@ -41,7 +47,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
     public void onBindViewHolder(@NonNull PlanejamentoAdapter.PlanejamentosHolder planejamentosHolder, int i) {
         Planejamento planejamento = mListaDePlanejamentos.get(i);
         planejamentosHolder.vincula(planejamento);
-        planejamentosHolder.edit(planejamento);
+        planejamentosHolder.editar(planejamento);
         planejamentosHolder.delete(planejamento.getmId());
     }
 
@@ -62,7 +68,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             super(itemView);
 
             textNome = itemView.findViewById(R.id.txt_nome);
-            textReserva = itemView.findViewById(R.id.txt_reserva);
+            textReserva = itemView.findViewById(R.id.txt_valreserva);
             textDataInicio = itemView.findViewById(R.id.txt_dt_inicio);
             textDataFim = itemView.findViewById(R.id.txt_dt_fim);
             fabEditar = itemView.findViewById(R.id.fab_editar);
@@ -87,11 +93,17 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
                 }
             });
         }
-        public void edit(final Planejamento planejamento){
+        public void editar(final Planejamento planejamento){
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    planejamento.getValue(mContext, FormularioPlanejamentoFragment.class);
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.planejamento.VisualizacaoPlanejamentoFragment, planejamento.FormularioPlanejamentoFragment);
+                    fragmentTransaction.commit();
+
+
+
                 }
             });
         }

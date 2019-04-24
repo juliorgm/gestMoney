@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,8 +41,6 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_visualizacao_planejamento, container, false);
 
         mListaDePlanejamentos = new ArrayList<>();
-        recyclerViewPlanejamentos = view.findViewById(R.id.recycler_planejamento);
-
         carregaFirebase();
         return view;
     }
@@ -72,6 +71,7 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
     }
 
     private void carregaRecycler(View view) {
+        recyclerViewPlanejamentos = view.findViewById(R.id.recycler_planejamento);
         PlanejamentoAdapter adapter = new PlanejamentoAdapter(getContext(), mListaDePlanejamentos);
         recyclerViewPlanejamentos.setAdapter(adapter);
     }

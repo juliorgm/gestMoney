@@ -1,6 +1,10 @@
 package br.com.juliorgm.gestmoney.model;
 
+import android.content.Context;
+
 import java.io.Serializable;
+
+import br.com.juliorgm.gestmoney.planejamento.FormularioPlanejamentoFragment;
 
 public class Planejamento implements Serializable {
 
@@ -68,4 +72,5 @@ public class Planejamento implements Serializable {
     public void setmDataFim(String mDataFim) {
         this.mDataFim = mDataFim;
     }
+
 }
