@@ -97,10 +97,11 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.planejamento.VisualizacaoPlanejamentoFragment, planejamento.FormularioPlanejamentoFragment);
-                    fragmentTransaction.commit();
+                    getActivity().getSupportFragmentManager();
+//                  FragmentManager fragmentManager = getFragmentManager();
+//                  FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                  fragmentTransaction.add(R.id.VisualizacaoPlanejamentoFragment, fragment_formulario_planejamento);
+//                  fragmentTransaction.commit();
 
 
 
