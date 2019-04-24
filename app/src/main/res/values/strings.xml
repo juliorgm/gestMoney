@@ -1,6 +1,27 @@
 <resources>
     <string name="app_name">gestMoney</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="login_activity_edit_email">Informe seu Email</string>
+    <string name="login_activity_edit_senha">Informe sua senha</string>
+    <string name="login_activity_btn_entrar">ENTRAR</string>
+    <string name="login_activity_txt_registrar">Registrar uma nova conta</string>
+    <string name="login_activity_txt_recuperar">Recuperar senha</string>
+    <string name="registrar_activity_edit_nome">Informe seu nome</string>
+    <string name="registrar_activity_edit_email">Informe seu email</string>
+    <string name="registrar_activity_edit_senha">Informe sua senha</string>
+    <string name="registrar_activity_btn_salvar">SALVAR</string>
+    <string name="registrar_activity_btn_retorno">VOLTAR</string>
+    <string name="recuperar_activity_txtTitulo_email">EMAIL</string>
+    <string name="recuperar_activity_edit_email">Informe seu email</string>
+    <string name="recuperar_activity_txt_mensagem">Após inserir o endereço e clicar no botão, você receberá uma mensagem de recuperação de senha na caixa de entrada de seu e-mail</string>
+    <string name="recuperar_activity_btn_enviar">ENVIAR</string>
+    <string name="recuperar_activity_btn_retorno">VOLTAR</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_fire_missiles">Informe seu email</string>
+    <string name="fire">Enviar</string>
+    <string name="title_activity_login">ActivityLogin</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -11,8 +32,7 @@
     <string name="nav_receita">Receita</string>
     <string name="nav_planejamento">Planejamento</string>
     <string name="nav_sair">Sair</string>
+    <string name="title_activity_main">GestMoney</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main2">Main2Activity</string>
+
 </resources>

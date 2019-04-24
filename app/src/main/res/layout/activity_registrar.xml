@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/registrar_activity_edit_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="@string/registrar_activity_edit_nome"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registrar_activity_edit_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="@string/registrar_activity_edit_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/registrar_activity_edit_nome"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/registrar_activity_edit_nome"
+        app:layout_constraintTop_toBottomOf="@+id/registrar_activity_edit_nome" />
+
+    <Button
+        android:id="@+id/registrar_activity_btn_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/registrar_activity_btn_salvar"
+        app:layout_constraintEnd_toEndOf="@+id/registrar_activity_edit_senha"
+        app:layout_constraintStart_toStartOf="@+id/registrar_activity_edit_senha"
+        app:layout_constraintTop_toBottomOf="@+id/registrar_activity_edit_senha" />
+
+    <EditText
+        android:id="@+id/registrar_activity_edit_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/registrar_activity_edit_senha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/registrar_activity_edit_email"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/registrar_activity_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/registrar_activity_edit_email" />
+
+</android.support.constraint.ConstraintLayout>
