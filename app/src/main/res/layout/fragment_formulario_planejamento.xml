@@ -43,7 +43,8 @@
             android:id="@+id/edit_valor_reserva"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Valor reservado" />
+            android:hint="Valor reservado"
+            android:inputType="numberDecimal" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -59,7 +60,8 @@
             android:id="@+id/edit_dtInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Data de Inicio" />
+            android:hint="Data de Inicio"
+            android:inputType="date" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -75,7 +77,8 @@
             android:id="@+id/edit_dtFim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Data do Fim" />
+            android:hint="Data do Fim"
+            android:inputType="date" />
     </android.support.design.widget.TextInputLayout>
 
     <Button

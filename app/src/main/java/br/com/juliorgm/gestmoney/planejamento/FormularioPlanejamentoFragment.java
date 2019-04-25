@@ -51,7 +51,7 @@ public class FormularioPlanejamentoFragment extends Fragment {
 
     private void preencheFormulario(Planejamento planejamento) {
         editNome.setText(planejamento.getmNome());
-        editReserva.setText(planejamento.getmReserva());
+        editReserva.setText(String.valueOf(planejamento.getmReserva()));
         editDataInicio.setText(planejamento.getmDataInicio());
         editDataFim.setText(planejamento.getmDataFim());
     }
@@ -71,6 +71,7 @@ public class FormularioPlanejamentoFragment extends Fragment {
     }
 
     private void limparTela() {
+
     }
 
     private void carregaViews(View view) {
