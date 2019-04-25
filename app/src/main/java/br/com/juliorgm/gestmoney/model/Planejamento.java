@@ -22,7 +22,7 @@ public class Planejamento implements Serializable {
     public Planejamento() {
     }
 
-    public Planejamento(String nome, Double reserva, String dataInicio, String dataFim) {
+    public Planejamento(String mNome, double mReserva, String mDataInicio, String mDataFim) {
         this.mNome = mNome;
         this.mReserva = mReserva;
         this.mDataInicio = mDataInicio;
@@ -49,8 +49,8 @@ public class Planejamento implements Serializable {
         this.mNome = mNome;
     }
 
-    public int getmReserva() {
-        return (int) mReserva;
+    public double getmReserva() {
+        return mReserva;
     }
 
     public void setmReserva(Double mReserva) {
