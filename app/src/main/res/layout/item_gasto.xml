@@ -1,9 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
+    <TextView
+        android:id="@+id/mTxtItemDataVisualizacaoGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Data"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txt_data_visualizacao_gasto"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_data_visualizacao_gasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginRight="244dp"
+        android:text="02/03/2019"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mTxtItemDescricaoVisualizacaoGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Descrição"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/mTxtItemDataVisualizacaoGasto"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/mTxtItemDataVisualizacaoGasto"
+        app:layout_constraintTop_toBottomOf="@+id/mTxtItemDataVisualizacaoGasto" />
+
+    <TextView
+        android:id="@+id/txt_descricao_visualizacao_gasto"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:text="Café"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_data_visualizacao_gasto"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="@+id/txt_data_visualizacao_gasto"
+        app:layout_constraintTop_toBottomOf="@+id/txt_data_visualizacao_gasto" />
+
+    <TextView
+        android:id="@+id/mTxtItemCategoriaVisualizacaoGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Categoria"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/mTxtItemDescricaoVisualizacaoGasto"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="@+id/mTxtItemDescricaoVisualizacaoGasto"
+        app:layout_constraintTop_toBottomOf="@+id/mTxtItemDescricaoVisualizacaoGasto" />
+
+    <TextView
+        android:id="@+id/txt_categoria_visualizacao_gasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Bebida"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_descricao_visualizacao_gasto"
+        app:layout_constraintStart_toStartOf="@+id/txt_descricao_visualizacao_gasto"
+        app:layout_constraintTop_toBottomOf="@+id/txt_descricao_visualizacao_gasto" />
+
+    <TextView
+        android:id="@+id/txt_valor_visualizacao_gasto"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:text="R$ 10.00"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_categoria_visualizacao_gasto"
+        app:layout_constraintStart_toStartOf="@+id/txt_categoria_visualizacao_gasto"
+        app:layout_constraintTop_toBottomOf="@+id/txt_categoria_visualizacao_gasto" />
+
+    <TextView
+        android:id="@+id/mTxtItemValorVisualizacaoGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Valor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/mTxtItemCategoriaVisualizacaoGasto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/mTxtItemCategoriaVisualizacaoGasto"
+        app:layout_constraintTop_toBottomOf="@+id/mTxtItemCategoriaVisualizacaoGasto" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_editar_gasto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/edit_text" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_deletar_gasto"
+        android:layout_width="62dp"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab_editar_gasto"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 </android.support.constraint.ConstraintLayout>

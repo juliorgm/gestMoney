@@ -3,6 +3,7 @@ package br.com.juliorgm.gestmoney.gasto;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,7 @@ import br.com.juliorgm.gestmoney.activityLogin.LoginActivity;
 import br.com.juliorgm.gestmoney.adapter.GastoAdapter;
 import br.com.juliorgm.gestmoney.helper.Constantes;
 import br.com.juliorgm.gestmoney.models.Gastos;
+import okhttp3.internal.Util;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -38,11 +40,11 @@ public class VisualizacaoGastoFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private String mTipoPlanejamento;
     private List<Gastos> mListaGasto;
+    private FloatingActionButton fab_deletar_gasto;
 
     public VisualizacaoGastoFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,4 +106,5 @@ public class VisualizacaoGastoFragment extends Fragment {
     private void carregaViews(View view) {
         mRecyclerView = view.findViewById(R.id.recycler_gastos);
     }
+
 }
