@@ -16,12 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import br.com.juliorgm.gestmoney.receita.FormularioReceitaFragment;
+import br.com.juliorgm.gestmoney.receita.VisualizacaoReceitaFragment;
 import br.com.juliorgm.gestmoney.tabs.TabGastoFragment;
 import br.com.juliorgm.gestmoney.tabs.TabPlanejamentoFragment;
 import br.com.juliorgm.gestmoney.tabs.TabReceitaFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,7 +44,7 @@ public class FormularioReceitaFragment extends Fragment {
 
     private void preencheFormulario(Receita receita) {
         mDescricao.setText(receita.getMdescricao());
-        mValor.setText((int) receita.getMvalor());
+        mValor.setText(String.valueOf(receita.getMvalor()));
         mData.setText(receita.getMdata());
 
     }
@@ -57,8 +58,10 @@ public class FormularioReceitaFragment extends Fragment {
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(USUARIO);
+                myRef.child("usuario").child(RECEITAS).push().setValue( pegaReceita());
+                Toast.makeText(getContext(),"Inserção bem sucedida",Toast.LENGTH_SHORT).show();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new VisualizacaoReceitaFragment()).commit();
 
-                myRef.child("CLZzksTIksNOsWAmDLkeFOlirVu2").child(RECEITAS).push().setValue( pegaReceita());
 
             }
         });
@@ -77,4 +80,5 @@ public class FormularioReceitaFragment extends Fragment {
         String data = mData.getText().toString();
         return new Receita(descricao, valor, data);
     }
+
 }

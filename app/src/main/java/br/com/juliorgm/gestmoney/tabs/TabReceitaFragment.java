@@ -40,6 +40,9 @@ public class TabReceitaFragment extends Fragment {
         return view;
     }
 
+    public interface OnFragmentInteractionListener {
+    }
+
     private class TabReceitaFragmentPageAdapter extends FragmentPagerAdapter {
 
         public TabReceitaFragmentPageAdapter(FragmentManager childFragmentManager) {

@@ -11,7 +11,7 @@ public class Receita implements Serializable {
     private String mId;
 
 
-    public void setmId(String mId) {
+    public void setmId(String mId)   {
         this.mId = mId;
     }
 
@@ -52,7 +52,7 @@ public class Receita implements Serializable {
     }
 
     public double getMvalor() {
-        return (int) mvalor;
+        return mvalor;
     }
 
 

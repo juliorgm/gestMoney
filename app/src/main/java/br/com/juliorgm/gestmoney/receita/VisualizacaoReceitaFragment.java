@@ -2,6 +2,7 @@ package br.com.juliorgm.gestmoney.receita;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,9 +36,8 @@ public class VisualizacaoReceitaFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_visualizacao_receita, container, false);
-
-        mListaDeReceita = new ArrayList<>();
         recyclerViewReceita = view.findViewById(R.id.recycler_receita);
+        mListaDeReceita = new ArrayList<>();
 
         carregaFirebase();
         return view;
@@ -53,12 +53,16 @@ public class VisualizacaoReceitaFragment extends Fragment {
 
                 mListaDeReceita.clear();
                 for (DataSnapshot d: dataSnapshot.getChildren()) {
-                    Receita planejamento = d.getValue(Receita.class);
-                    planejamento.setmId(d.getKey());
-                    mListaDeReceita.add(planejamento);
+                    if(d.getKey().equals("pessoal")) continue;
+                    Receita receita = d.getValue(Receita.class);
+                    receita.setmId(d.getKey());
+                    mListaDeReceita.add(receita);
                 }
-                carregaRecycler(recyclerViewReceita);
+                if (mListaDeReceita.size()>0)carregaRecycler();
+
             }
+
+
 
             @Override
             public void onCancelled(DatabaseError error) {
@@ -68,8 +72,10 @@ public class VisualizacaoReceitaFragment extends Fragment {
         });
     }
 
-    private void carregaRecycler(View view) {
+    private void carregaRecycler() {
         ReceitaAdapter adapter = new ReceitaAdapter(getContext(), mListaDeReceita);
+        recyclerViewReceita.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewReceita.setAdapter(adapter);
     }
+
 }

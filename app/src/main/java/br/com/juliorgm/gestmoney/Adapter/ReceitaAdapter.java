@@ -1,6 +1,7 @@
 package br.com.juliorgm.gestmoney.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import br.com.juliorgm.gestmoney.R;
 import br.com.juliorgm.gestmoney.model.Receita;
+import br.com.juliorgm.gestmoney.receita.EditarReceita;
 import br.com.juliorgm.gestmoney.receita.FormularioReceitaFragment;
 
 public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.ReceitaHolder> {
@@ -67,7 +69,7 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.ReceitaH
 
         public void vincula(Receita receita){
             textDescricao.setText(receita.getMdescricao());
-            textValor.setText((int) receita.getMvalor());
+            textValor.setText(String.valueOf(receita.getMvalor()));
             textData.setText(receita.getMdata());
         }
 
@@ -89,7 +91,9 @@ public class ReceitaAdapter extends RecyclerView.Adapter<ReceitaAdapter.ReceitaH
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    receita.getValue(mContext, FormularioReceitaFragment.class);
+                    Intent intent = new Intent(mContext, EditarReceita.class);
+                    intent.putExtra("RECEITA",receita);
+                    mContext.startActivity(intent);
                 }
             });
         }
