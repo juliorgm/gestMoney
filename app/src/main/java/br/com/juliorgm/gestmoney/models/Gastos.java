@@ -3,13 +3,16 @@ package br.com.juliorgm.gestmoney.models;
 import java.io.Serializable;
 
 public class Gastos implements Serializable {
-    private int mIdGasto;
+    private String mIdGasto;
     private double mValor;
     private String mData;
     private String mCategoria;
     private String mDescricao;
 
-    public Gastos(int mIdGasto, double mValor, String mData, String mCategoria, String mDescricao) {
+    public Gastos() {
+    }
+
+    public Gastos(String mIdGasto, double mValor, String mData, String mCategoria, String mDescricao) {
         this.mIdGasto = mIdGasto;
         this.mValor = mValor;
         this.mData = mData;
@@ -24,8 +27,12 @@ public class Gastos implements Serializable {
         this.mDescricao = mDescricao;
     }
 
-    public int getmIdGasto(){
+    public String getmIdGasto(){
         return mIdGasto;
+    }
+
+    public void setmIdGasto(String mIdGasto){
+        this.mIdGasto = mIdGasto;
     }
 
     public double getmValor() {

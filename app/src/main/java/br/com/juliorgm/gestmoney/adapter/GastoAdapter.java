@@ -19,7 +19,7 @@ public class GastoAdapter extends RecyclerView.Adapter<GastoAdapter.GastoHolder>
     private Context mContext;
 
 
-    public GastoAdapter(List<Gastos> mListaGastos, Context mContext) {
+    public GastoAdapter(Context mContext, List<Gastos> mListaGastos) {
         this.mListaGastos = mListaGastos;
         this.mContext = mContext;
     }
