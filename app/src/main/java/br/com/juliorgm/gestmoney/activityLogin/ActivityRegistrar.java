@@ -42,6 +42,7 @@ public class ActivityRegistrar extends AppCompatActivity {
         registrar_activity_edit_senha = findViewById(R.id.registrar_activity_edit_senha);
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Recuperar Senha");

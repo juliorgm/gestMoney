@@ -74,12 +74,10 @@ public class MainActivity extends AppCompatActivity
         ImageView imagemMenuTopo =  view.findViewById(R.id.img_menu_perfil);
         TextView txtNome = view.findViewById(R.id.txt_menu_perfil_nome);
         TextView txtEmail = view.findViewById(R.id.txt_menu_perfil_email);
-
+        Picasso.get().load(usuario.getPhotoUrl()).into(imagemMenuTopo);
         txtNome.setText(usuario.getDisplayName());
         txtEmail.setText(usuario.getEmail());
-        Picasso.get().load(usuario.getPhotoUrl()).into(imagemMenuTopo);
     }
-
 
     @Override
     public void onBackPressed() {
@@ -130,6 +128,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_sair) {
             FirebaseAuth.getInstance().signOut();
             vaiParaLoginActivity();
+            return true;
         }
 
         FragmentManager fm = getSupportFragmentManager();
