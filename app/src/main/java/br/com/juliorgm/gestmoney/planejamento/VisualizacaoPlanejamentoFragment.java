@@ -61,6 +61,7 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
                 mListaDePlanejamentos.clear();
                 for (DataSnapshot d: snapshot.getChildren()) {
                     if(d.getKey().equals("pessoal")) continue;
+
                     Planejamento planejamento = d.getValue(Planejamento.class);
                     planejamento.setmId(d.getKey());
                     mListaDePlanejamentos.add(planejamento);

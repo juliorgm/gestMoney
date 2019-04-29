@@ -60,10 +60,6 @@ public class FormularioPlanejamentoFragment extends Fragment {
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (v == null) {
-                    
-                }
                 pegaPlanejamento();
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(USUARIO);

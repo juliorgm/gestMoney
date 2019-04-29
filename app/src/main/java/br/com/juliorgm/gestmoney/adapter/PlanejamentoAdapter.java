@@ -22,7 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 import br.com.juliorgm.gestmoney.R;
 import br.com.juliorgm.gestmoney.model.Planejamento;
-import br.com.juliorgm.gestmoney.planejamento.EditarPlanejamento;
 import br.com.juliorgm.gestmoney.planejamento.FormularioPlanejamentoFragment;
 import br.com.juliorgm.gestmoney.planejamento.VisualizacaoPlanejamentoFragment;
 
@@ -99,9 +98,7 @@ public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapte
             fabEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, EditarPlanejamento.class);
-                    intent.putExtra("PLANEJAMENTO",planejamento);
-                    mContext.startActivity(intent);
+
                 }
             });
         }
