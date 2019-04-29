@@ -104,5 +104,4 @@ public class VisualizacaoGastoFragment extends Fragment {
     private void carregaViews(View view) {
         mRecyclerView = view.findViewById(R.id.recycler_gastos);
     }
-
 }
