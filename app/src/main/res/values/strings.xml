@@ -14,7 +14,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="planejamento_fragment_txt_nome" />
-    <string name="planejamento_fragment_txt_receita" />
+    <string name="planejamento_fragment_txt_reserva" />
     <string name="planejamento_fragment_txt_dtInicio" />
     <string name="planejamento_fragment_txt_dtFim" />
 
