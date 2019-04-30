@@ -40,47 +40,47 @@ public class VisualizacaoPlanejamentoFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_visualizacao_planejamento, container, false);
-        //recyclerViewPlanejamentos = view.findViewById(R.id.recycler_planejamento);
+        recyclerViewPlanejamentos = view.findViewById(R.id.recycler_planejamento);
         mListaDePlanejamentos = new ArrayList<>();
-        //carregaFirebase();
+        carregaFirebase();
         return view;
     }
 
     private void carregaFirebase(){
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference reference = database.getReference("usuario");
-//        //DatabaseReference reference2 = database.getReference(FirebaseAuth.getInstance().getCurrentUser().getUid());
-//
-//        reference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//                DataSnapshot snapshot = dataSnapshot.child("CLZzksTIksNOsWAmDLkeFOlirVu2")
-//                        .child("planejamentos");
-//
-//                mListaDePlanejamentos.clear();
-//                for (DataSnapshot d: snapshot.getChildren()) {
-//                    if(d.getKey().equals("pessoal")) continue;
-//
-//                    Planejamento planejamento = d.getValue(Planejamento.class);
-//                    planejamento.setmId(d.getKey());
-//                    mListaDePlanejamentos.add(planejamento);
-//                }
-//
-//                if (mListaDePlanejamentos.size()>0)carregaRecycler();
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // Failed to read value
-//                Log.w("Main", "Failed to read value.", error.toException());
-//            }
-//        });
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("usuario");
+        //DatabaseReference reference2 = database.getReference(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                DataSnapshot snapshot = dataSnapshot.child("CLZzksTIksNOsWAmDLkeFOlirVu2")
+                        .child("planejamentos");
+
+                mListaDePlanejamentos.clear();
+                for (DataSnapshot d: snapshot.getChildren()) {
+                    if(d.getKey().equals("pessoal")) continue;
+
+                    Planejamento planejamento = d.getValue(Planejamento.class);
+                    planejamento.setmId(d.getKey());
+                    mListaDePlanejamentos.add(planejamento);
+                }
+
+                if (mListaDePlanejamentos.size()>0)carregaRecycler();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("Main", "Failed to read value.", error.toException());
+            }
+        });
     }
 
     private void carregaRecycler() {
-//        PlanejamentoAdapter adapter = new PlanejamentoAdapter(getActivity(), mListaDePlanejamentos);
-//        recyclerViewPlanejamentos.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerViewPlanejamentos.setAdapter(adapter);
+        PlanejamentoAdapter adapter = new PlanejamentoAdapter(getContext(), mListaDePlanejamentos);
+        recyclerViewPlanejamentos.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewPlanejamentos.setAdapter(adapter);
     }
 }

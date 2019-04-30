@@ -1,6 +1,7 @@
 package br.com.juliorgm.gestmoney.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -17,10 +18,10 @@ import br.com.juliorgm.gestmoney.model.Planejamento;
 
 public class PlanejamentoAdapter extends RecyclerView.Adapter<PlanejamentoAdapter.PlanejamentosHolder> {
 
-    private Activity mContext;
+    private Context mContext;
     private List<Planejamento> mListaDePlanejamentos;
 
-    public PlanejamentoAdapter(Activity mContext, List<Planejamento> mListaDePlanejamentos) {
+    public PlanejamentoAdapter(Context mContext, List<Planejamento> mListaDePlanejamentos) {
         this.mListaDePlanejamentos = mListaDePlanejamentos;
         this.mContext = mContext;
     }

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,31 +49,36 @@ public class FormularioPlanejamentoFragment extends Fragment {
     }
 
 
+    private void preencheFormulario(Planejamento planejamento) {
+        editNome.setText(planejamento.getmNome());
+        editReserva.setText(String.valueOf(planejamento.getmReserva()));
+        editDataInicio.setText(planejamento.getmDataInicio());
+        editDataFim.setText(planejamento.getmDataFim());
+    }
+
     private void cliqueBotao() {
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pegaPlanejamento();
-                //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(USUARIO);
                 myRef.child("CLZzksTIksNOsWAmDLkeFOlirVu2").child(PLANEJAMENTOS).push().setValue( pegaPlanejamento());
-                //Toast.makeText(getContext(),"Inserção bem sucedida",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Inserção bem sucedida",Toast.LENGTH_SHORT).show();
                 limparTela();
             }
         });
     }
 
     private void limparTela() {
-        editNome.getText().clear();
-        editReserva.getText().clear();
-        editDataInicio.getText().clear();
-        editDataFim.getText().clear();
-
-        editNome.requestFocus();
     }
 
     private void carregaViews(View view) {
-
+        editNome = view.findViewById(R.id.edit_nome);
+        editReserva = view.findViewById(R.id.edit_valor_reserva);
+        editDataInicio = view.findViewById(R.id.edit_dtInicio);
+        editDataFim = view.findViewById(R.id.edit_dtFim);
+        buttonSalvar = view.findViewById(R.id.button_salvar);
     }
 
     private Planejamento pegaPlanejamento() {
